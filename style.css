@@ -38,6 +38,11 @@ body {
     padding: 3px;
     border-radius: 3px;
   }
+  .fa-check{
+    background-color:black;
+    padding: 3px;
+    border-radius: 3px;
+  }
   
   #tasks {
     display: grid;
