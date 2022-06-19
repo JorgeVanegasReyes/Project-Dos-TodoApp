@@ -19,6 +19,12 @@ body {
     overflow-y: scroll;
   }
   
+  .app h4{
+    animation: azul-neon 6s infinite alternate;
+    font-weight: 700;
+    text-align:center;
+    font-size: 50px;
+  }
   .app::-webkit-scrollbar {
     width: 0 !important;
   }
@@ -71,4 +77,21 @@ body {
   
   #msg {
     color: red;
+  }
+
+
+  /* ------------------------- */
+  /* Animaciones */
+  /* ------------------------- */
+  @keyframes azul-neon {
+    0%, 10%, 15%, 20%, 30%, 35%, 40%, 50%, 55%, 60%, 70%, 75%, 80%, 85%, 90%, 100% {
+      text-shadow: 9px 9px 18px #e2eede, 
+             3px 3px 5px #abcea1, 
+             -3px -3px 5px #548048, 
+             -9px -9px 27px #e2eede;
+    }
+  
+    10%, 15%, 60% {
+      text-shadow: none;
+    }
   }
