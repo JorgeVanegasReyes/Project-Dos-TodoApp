@@ -1,89 +1,189 @@
-body {
-    font-family: sans-serif;
-    margin: 0 50px;
-    background-color: #f7e4e4;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  background-image: url(checklist1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   
-  .app {
-    background-color: #fff;
-    width: 600px;
-    height: 500px;
-    border: 5px solid #abcea1;
-    border-radius: 8px;
-    padding: 15px;
-    overflow-y: scroll;
-  }
+}
+.container {
+  position:relative;
+  display: grid;
+  height:100vh;
+  min-width:98%; /*cuando width no funciona. Usar max o min-width*/
+  grid-template-columns: 60% 40%;
+  grid-template-rows:135px auto;
+  grid-template-areas:
+    "liquidwave liquidwave"
+    "app countdowntimer";
+  grid-gap: 0.9rem;
+  margin-top:20px;
+  justify-content:center;
+}
+
+/* CODIGO TODO LIST-POPUP*/
+.app{
+  grid-area: app;
+  position:absolute;
+  background:linear-gradient(139deg,rgb(106, 169, 148,.5) 0%,rgb(8, 82, 57,.5) 90%);
+  width:100%;
+  box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding:15px;
+  margin-top:30px;
   
-  .app h4{
-    animation: azul-neon 6s infinite alternate;
-    font-weight: 700;
-    text-align:center;
-    font-size: 50px;
-  }
-  .app::-webkit-scrollbar {
-    width: 0 !important;
-  }
+}
+
+.mb-3{
+  animation: verde-neon 6s infinite alternate;
+  font-weight: 700;
+  text-align:center;
+  font-size: 50px;
+  letter-spacing: .2rem;
+}
+/*color:#e33e5a; (rojo claro)*/
+#addNew{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  background-color: #246f39 ;
+  box-shadow: 0.5rem 0.5rem rgba(0,0,0,0.1);
+  padding:5px 10px;
+  border-radius:5px;
+  cursor:pointer;
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+#addNew span{
+  font-weight: bolder;
+  font-size:18px;
+  letter-spacing: .2rem;
   
-  #addNew {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(171, 206, 161, 0.35);
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .fa-plus {
-    background-color: #abcea1;
-    padding: 3px;
-    border-radius: 3px;
-  }
-  .fa-check{
-    background-color:black;
-    padding: 3px;
-    border-radius: 3px;
-  }
-  
-  #tasks {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  #tasks div {
-    border: 3px solid #abcea1;
-    background-color: #e2eede;
-    border-radius: 6px;
-    padding: 5px;
-    display: grid;
-    gap: 4px;
-  }
-  
-  #tasks div .options {
-    justify-self: center;
-    display: flex;
-    gap: 20px;
-  }
-  
-  #tasks div .options i {
-    cursor: pointer;
-  }
-  
-  #msg {
-    color: red;
-  }
+}
+
+.fa-plus{
+  background-color: #1f4068;
+  color:#e33e5a;
+  padding:4px;
+  border-radius:5px;
+  margin-left:40px;
+}
+
+#tasks{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-gap:14px;
+  counter-reset:my-counter;
+}
+#tasks div{
+  border:3px solid #1f4068;
+  background-color:#e7e8f8;
+  border-radius:10px;
+  padding:5px;
+  display:grid;
+  grid-gap:4px;
+  counter-increment:my-counter;
+}
+#tasks div::before{
+  content:counter(my-counter);
+  background:rgb(8, 82, 57);
+  width: 2rem;
+  height: 2rem;
+  font-weight:bolder;
+  border-radius:50%;
+  display:inline-block;
+  line-height: 2rem;
+  text-align: Center;
+  color:#fff;
+  margin-right: 0.5rem
+}
+#tasks div .options{
+   justify-self:right;
+   margin-top: -40px;
+   display:flex;
+   grid-gap:20px;
+}
+#tasks div .options i{
+   cursor:pointer;
+}
+#tasks div .options .fa-edit{
+   color:#13a13b;
+}
+#tasks div .options .fa-trash-alt{
+   color:#e33e5a;
+}
+
+.modal-content{
+  background:linear-gradient(139deg,rgb(106, 169, 148,.3) 0%,rgb(8, 82, 57,.3) 90%);
+  color:white;
+}
+.modal-body p{
+  font-weight: bolder;
+  font-size:18px;
+  letter-spacing: .2rem;
+  margin-bottom:3px;
+}
+.form-control{
+  background:rgba(11, 77, 55, 0.3);
+  font-size:20px;
+  font-weight:bold;
+}
+
+.text-center{
+  color:white;
+  font-weight: bolder;
+  font-size:28px;
+}
+
+/* ------------------------- */
+  /* Liquid Wave (To Do List App) */
+  /* ------------------------- */
+.liquidwave{
+  grid-area: liquidwave;
+  display:grid;
+  position:relative;
+  width:100%; 
+  height: 135px;
+  display:flex;
+  justify-content:center;
+  text-align:center;
+ 
+}
+.liquidwave h2{
+  position:absolute;
+  font-size:124px;
+  background:linear-gradient(139deg,rgb(106, 169, 148,.2) 0%,rgb(8, 82, 57,.2) 90%);
+  font-weight:800;
+  width:100%;
+  border-radius:8px;
+}
+.liquidwave h2:nth-child(1){
+  color: #fff;
+}
+
+
+/* ------------------------- */
+  /* Countdown Timer */
+  /* ------------------------- */
+.countdowntimer{
+  grid-area: countdowntimer;
+  background-color:#e33e5a;
+  position:absolute;
+  width:100%;
+  margin-top:30px;
+}
 
 
   /* ------------------------- */
   /* Animaciones */
   /* ------------------------- */
-  @keyframes azul-neon {
+  @keyframes verde-neon {
     0%, 10%, 15%, 20%, 30%, 35%, 40%, 50%, 55%, 60%, 70%, 75%, 80%, 85%, 90%, 100% {
       text-shadow: 9px 9px 18px #e2eede, 
              3px 3px 5px #abcea1, 
