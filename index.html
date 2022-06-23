@@ -73,36 +73,49 @@
 
   </div> <!--app -->
 
-<!------------------------------- -->
-<!--------- COUNTDOWN TIMER -------->
-<!------------------------------- -->
-<div class="countdowntimer">
-  <h2>DEADLINE DAY COUNTDOWN TIMER</h2>
-<div class="clock-input">
-	<input type="date" name="time-to" class="time-to" id="time-to" value="" onchange="calcTime(this.value)">
-</div>
-<div class="containerreloj">
-	<div class="clock-column">
-		<p class="clock-day clock-timer"></p>
-		<p class="clock-label">Days</p>
-	</div>
 
-	<div class="clock-column">
-		<p class="clock-hours clock-timer"></p>
-		<p class="clock-label">Hours</p>
-	</div>
+  
+  
+<!--****************************************-->
+<!-- COUNTDOWN TIMER with one TODO LIST (localstorage)-->
+<!--****************************************-->
+<div class="containerreloj"> 
+  <!--input--->
+  <div class="input-container" id="input-container" hidden>
+    <h1 class="customh1">DEADLINE DAY <br> COUNTDOWN TIMER </h1>
 
-	<div class="clock-column">
-		<p class="clock-minutes clock-timer"></p>
-		<p class="clock-label">Minutes</p>
-	</div>
+    <form class="form" id="countdownForm">
+    <label class="formlabel" for="tittle">Title</label>
 
-	<div class="clock-column">
-		<p class="clock-seconds clock-timer"></p>
-		<p class="clock-label">Seconds</p>
-	</div>
-</div>  <!--counteinerreloj -->
-</div> <!--countdowntimer -->
+    <input class="inputtitle" type="text" id="title" placeholder="Your DEADLINE task">
+      <label for="date-picker">Select a Date</label>
+      <input class="inputtitle" type="date" id="date-picker">
+      <button class="buttoncountdown" type="submit">Submit</button>
+    </form>
+  </div> <!--input-container -->
+    
+    <!--COUNTDOWN -->
+    <div class="countdown" id="countdown" hidden> 
+    <h1 class="countdown-title" id="countdown-title">Countdown Title </h1>
+      <ul class="ulCount">
+        <li class="liCount"><span></span>Days</li>
+        <li class="liCount"><span></span>Hours</li>
+        <li class="liCount"><span></span>Minutes</li>
+        <li class="liCount"><span></span>Seconds</li>
+      </ul>
+      <button class="buttoncountdown" id="countdown-button">Reset</button>
+    </div>
+    
+    <!--Complete-->
+    <div class="complete" id="complete">
+      <h1 class="complete-title">Countdown Complete</h1>
+      <h1 id="complete-info">Countdown Finished on 06-05-22</h1>
+      <button id="complete-button">New Countdown</button>
+    </div>
+    
+  </div> <!--containerreloj -->
+
+  
 
 </div> <!--container -->
 

@@ -1,6 +1,6 @@
-#TodoList in Vanilla JavaScript
+# TodoList in Vanilla JavaScript
 
-* A Todo List app built in HTML, CSS and JavaScript.
+* A Todo List app and a deadline countdown timer for the main task (LocalStorage), built in HTML, CSS and JavaScript.
 
 ![alt text](/images/TodoList01.jpg)
 
