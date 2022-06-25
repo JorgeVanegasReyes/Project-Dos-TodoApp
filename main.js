@@ -164,3 +164,27 @@ function updateDom(){
     
   }, second)
 }
+
+//take values from our form input  (Guardar informacion en el LOCALSTORAGE)
+function updateCountdown(e){
+  e.preventDefault()
+  countdownTitle=e.srcElement[0].value
+  countdownDate=e.srcElement[1].value
+  savedCountdown ={
+    title:countdownTitle,
+    date:countdownDate
+  }
+  localStorage.setItem('countdown', JSON.stringify(savedCountdown))
+  
+  console.log(countdownTitle, countdownDate)
+  
+  //check for Valid Date
+  if(countdownDate === ''){
+    alert('Please select a date for the Countdown.')
+  }else{
+    //get number version of current date
+  countdownValue= new Date(countdownDate).getTime()
+  console.log('countdown value:', countdownValue)
+  updateDom()
+  }
+}
