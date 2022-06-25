@@ -7,8 +7,7 @@ body{
   background-image: url(checklist1.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
-  
+  background-size: cover; 
 }
 .container {
   position:relative;
@@ -17,8 +16,7 @@ body{
    /*cuando width no funciona. Usar max o min-width*/
   margin-top:20px;
   justify-content:center;
-  align-items:center;
-  
+  align-items:center; 
 }
 
 /* CODIGO TODO LIST-POPUP*/
@@ -29,7 +27,9 @@ body{
   box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
   border-radius: 8px;
   padding:15px;
-  width:80%x;
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .mb-3{
   animation: verde-neon 6s infinite alternate;
@@ -38,31 +38,42 @@ body{
   font-size: 50px;
   letter-spacing: .2rem;
 }
-#addNew{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+#addNew{ 
   color:#fff;
-  background-color: #246f39 ;
+  background:rgba(13, 145, 33, 0.6); 
   box-shadow: 0.5rem 0.5rem rgba(0,0,0,0.1);
   padding:5px 10px;
   border-radius:5px;
   cursor:pointer;
-  width:50%;
+  width:44%;
   margin-left:auto;
   margin-right:auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:30px; 
+}
+#addNew:hover{
+  transform:translate(0px, -12px);
+  background:rgb(11, 140, 30); 
 }
 #addNew p{
   font-weight: bolder;
-  font-size:18px;
+  font-size:21px;
+  width:50%;
   letter-spacing: .2rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:10px 0px 5px;
 }
 .fa-plus{
+  position:relative;
   background-color: #1f4068;
   color:#e33e5a;
-  padding:4px;
+  padding:8px;
   border-radius:5px;
-  margin-left:40px;
+  margin-left:20px;
 }
 #tasks{
   display:grid;
@@ -72,12 +83,16 @@ body{
 }
 #tasks div{
   border:3px solid #1f4068;
-  background-color:#e7e8f8;
+  background:rgba(163, 221, 171, 0.5); 
+  color:white;
   border-radius:10px;
   padding:5px;
   display:grid;
   grid-gap:4px;
+  width: 95%;
   counter-increment:my-counter;
+  margin-left: auto;
+  margin-right: auto;
 }
 #tasks div::before{
   content:counter(my-counter);
@@ -90,37 +105,118 @@ body{
   line-height: 2rem;
   text-align: Center;
   color:#fff;
-  margin-right: 0.5rem
+  margin-left: 1.2rem;
 }
+.fw-bold{
+  color:#045f1d;
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+  margin-left: 1.2rem;
+}
+.text-secondary{
+  text-decoration-color:rgb(15, 14, 14);
+  font-size: 18px;
+  font-weight: bolder;
+  width:11%;
+  text-align: center;
+  border-radius: 15px;
+  background-color:rgb(215, 193, 193, 0.5);
+  margin-left: 1.2rem;
+}
+#tasks div p{
+  width:79%;
+  overflow:auto;
+  font-size: 18px;
+  font-weight: bolder;
+  margin-left: 1.2rem;
+}
+
 #tasks div .options{
+   position:relative;
    justify-self:right;
    margin-top: -40px;
+   margin-right: 15px;
    display:flex;
-   grid-gap:20px;
+   grid-gap:30px; 
 }
 #tasks div .options i{
    cursor:pointer;
 }
 #tasks div .options .fa-edit{
-   color:#13a13b;
+   color:#045f1d;
+   font-size: 25px;
+   font-weight: bolder;
 }
 #tasks div .options .fa-trash-alt{
-   color:#e33e5a;
+  color:#970820;
+  font-size: 25px;
+  font-weight: bolder;
 }
+#tasks div .options .fa-check{
+  color:#3b07d5;
+  font-size: 25px;
+  font-weight: bolder;
+}
+/*****MODAL******/
 .modal-content{
   background:linear-gradient(139deg,rgb(106, 169, 148,.3) 0%,rgb(8, 82, 57,.3) 90%);
   color:white;
 }
+.modal-title{
+  font-size: 22px;
+  animation: verde-neon 6s infinite alternate;
+  margin-left: 30%; 
+}
+.btn-close{
+  font-size: 18px;
+  background-color:rgb(215, 193, 193, 0.5);
+  font-weight: bolder;
+}
 .modal-body p{
   font-weight: bolder;
-  font-size:18px;
-  letter-spacing: .2rem;
+  font-size:21px;
+  letter-spacing: .4rem;
   margin-bottom:3px;
 }
 .form-control{
-  background:rgba(11, 77, 55, 0.3);
   font-size:20px;
   font-weight:bold;
+}
+#textInput{
+  background:rgba(11, 77, 55, 0.3);
+  color:white;
+}
+#dateInput{
+  background:rgba(11, 77, 55, 0.3);
+  color:white;
+}
+#textarea{
+  background:rgba(11, 77, 55, 0.3);
+  color:white;
+  resize: none; 
+}
+.btn-secondary{
+  background:#970820;
+  color:white;
+  font-weight: bolder;
+  padding:10px;
+  border-radius:10px;
+}
+.btn-primary{
+  background:#08970a;
+  color:white;
+  font-weight: bolder;
+  padding:10px;
+  border-radius:10px;
+}
+.btn-secondary:hover{
+  transform:translate(0px, -9px);
+  background:rgba(114, 16, 1, 0.7); 
+}
+.btn-primary:hover{
+  transform:translate(0px, -9px);
+  background:rgba(6, 166, 19, 0.7);
 }
 .text-center{
   color:white;
@@ -202,7 +298,7 @@ body{
       margin-top:50px;
       margin-bottom:40px;
       border:none;
-      background:#006959;
+      background:#06927d;
       opacity:0.7;
       color:white;
       font-weight:bolder;
@@ -223,11 +319,26 @@ body{
     .countdown{
       min-height:100%; 
     }
+    .countdown-title{
+      position:relative;
+      width:50%;
+      animation: verde-neon 6s infinite alternate;
+      font-weight: bolder;
+      font-size: 50px;
+      text-align: center;
+      margin-left:auto;
+      margin-right: auto;
+      min-height: 200px;
+      position:relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .ulCount{
       width:70%;
       height:180px;
-      margin-top:130px;
-      margin-left:auto;
+      margin-top:5px;
+      margin-left: auto;
       margin-right: auto;
     }
     .liCount{
@@ -256,11 +367,13 @@ body{
       font-weight: bolder; 
       margin-top:90px;
       height:150px;
+      animation: verde-neon 6s infinite alternate;
     }
     .complete-title{
       position:relative;
       text-align: center;
-      animation:complete 4s infinite; 
+      animation:complete 6s infinite; 
+      letter-spacing: .2rem;
       top: 70px;
       width:70%;
       font-weight: bolder;
@@ -271,9 +384,6 @@ body{
       0%{
         color:rgb(233,13,13);
       }
-      25%{
-        color:rgb(233,211,13);
-      }
       50%{
         color:rgb(64,233,13);
         transform:scale(1.5);
@@ -282,7 +392,7 @@ body{
         color:rgb(0,38,253);
       }
       100%{
-        color:rgb(181,16,231);
+        color:rgb(233,211,13);
       }
     }
     #complete-button{
@@ -291,7 +401,7 @@ body{
         margin-top:50px;
         margin-bottom:40px;
         border:none;
-        background:#006959;
+        background:rgba(13, 145, 33, 0.4); 
         color:white;
         font-size: 25px;
         font-weight:bolder;
@@ -303,7 +413,7 @@ body{
       #complete-button:hover{
         /*filter:brightness(170%);*/
         background-color: #073614;
-        transform:translate(-12px)
+        transform:translate(0px, -9px);
       }
     .lineadivreloj p{
       color:transparent;
@@ -314,10 +424,10 @@ body{
   /* ------------------------- */
   @keyframes verde-neon {
     0%, 10%, 15%, 20%, 30%, 35%, 40%, 50%, 55%, 60%, 70%, 75%, 80%, 85%, 90%, 100% {
-      text-shadow: 9px 9px 18px #e2eede, 
+      text-shadow: 9px 9px 18px #b6eca4, 
              3px 3px 5px #abcea1, 
-             -3px -3px 5px #548048, 
-             -9px -9px 27px #e2eede;
+             -3px -3px 5px #20610e, 
+             -9px -9px 27px #b6eca4;
     }
     10%, 15%, 60% {
       text-shadow: none;
@@ -345,10 +455,10 @@ body{
       .liquidwave h2:nth-child(1){
         color:transparent;
         -webkit-text-stroke:2px #03a9f4;
-        text-shadow:  -2px 2px 0px #0d110e,
-                      -4px 4px 0px #0d110e,
-                      -6px 6px 0px #0d110e,
-                      -8px 8px 0px #0d110e,
+        text-shadow:  -2px 2px 0px #07014a,
+                      -4px 4px 0px #07014a,
+                      -6px 6px 0px #07014a,
+                      -8px 8px 0px #07014a,
                       -18px 18px 20px rgba(0,0,0,0.5),
                       -18px 18px 50px rgba(0,0,0,0.5);    
       }

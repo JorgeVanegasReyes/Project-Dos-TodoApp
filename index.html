@@ -11,27 +11,33 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylesDos.css">
 
 </head>
+<!--****************************************-->
+<!--CODIGO LIQUIDWAVE WATER TODO LIST APP-->
+<!--CODIGO TODO LIST APP-->
+<!--CODIGO COUNTDOWN TIMER-->
+<!--****************************************-->
 
 <body>
     <div class="container">
-       
-      <div class="liquidwave">
-          <h2>TO DO LIST APP</h2>
+      
+      <!--CODIGO LIQUIDWAVE WATER TODO LIST APP-->
+        <div class="liquidwave">
           <h2>TO DO LIST APP</h2>
           <h2>TO DO LIST APP</h2>
           <h2>TO DO LIST APP</h2>
         </div>
   
-
+  
+        <!--CODIGO TODO LIST APP-->
   <div class="app">
-    <h4 class="mb-3">TODO App</h4>
+    <h4 class="mb-3">TASK TO DO</h4>
 
 
     <div id="addNew" data-bs-toggle="modal" data-bs-target="#form">
-      <span>Add New Task</span>
+      <p>Add New Task</p>
       <i class="fas fa-plus"></i>
     </div>
 
@@ -40,7 +46,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+            <h5 class="modal-title" id="exampleModalLabel">ADD A NEW TASK</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
@@ -65,7 +71,7 @@
       </div> <!--modal-dialog -->
     </form>
 
-    <h5 class="text-center my-3">Tasks TO DO</h5>
+    <h5 class="text-center my-3"></h5>
 
     <div id="tasks">
       
@@ -73,11 +79,8 @@
 
   </div> <!--app -->
 
-
-  
-  
 <!--****************************************-->
-<!-- COUNTDOWN TIMER with one main task TODO (localstorage)-->
+<!-- COUNTDOWN TIMER with one TODO LIST (localstorage)-->
 <!--****************************************-->
 <div class="containerreloj"> 
   <!--input--->
@@ -88,40 +91,46 @@
     <label class="formlabel" for="tittle">Title</label>
 
     <input class="inputtitle" type="text" id="title" placeholder="Your DEADLINE task">
-      <label for="date-picker">Select a Date</label>
+      <label class="formlabel" for="date-picker">Select a Date</label>
       <input class="inputtitle" type="date" id="date-picker">
       <button class="buttoncountdown" type="submit">Submit</button>
     </form>
   </div> <!--input-container -->
-    
+     
     <!--COUNTDOWN -->
     <div class="countdown" id="countdown" hidden> 
     <h1 class="countdown-title" id="countdown-title">Countdown Title </h1>
       <ul class="ulCount">
-        <li class="liCount"><span></span>Days</li>
-        <li class="liCount"><span></span>Hours</li>
-        <li class="liCount"><span></span>Minutes</li>
-        <li class="liCount"><span></span>Seconds</li>
+        <li class="liCount"><span2></span2>Days</li>
+        <li class="liCount"><span2></span2>Hours</li>
+        <li class="liCount"><span2></span2>Minutes</li>
+        <li class="liCount"><span2></span2>Seconds</li>
       </ul>
-      <button class="buttoncountdown" id="countdown-button">Reset</button>
+      <button class="buttoncountdown" id="countdown-button">RESET</button>
     </div>
     
     <!--Complete-->
     <div class="complete" id="complete">
-      <h1 class="complete-title">Countdown Complete</h1>
-      <h1 id="complete-info">Countdown Finished on 06-05-22</h1>
+      <h1 class="complete-title">Countdown COMPLETE</h1>
+      <h1 id="complete-info"> </h1>
       <button id="complete-button">New Countdown</button>
     </div>
     
   </div> <!--containerreloj -->
 
-  
+  <!--linea transparente al final del reloj para separarlo del fondo-->
+  <div class="lineadivreloj">
+    <p>_________________________</p>
+  </div>
+
+
+
 
 </div> <!--container -->
-
 </body>
-<script src="main.js"></script>
+<script src="mainDos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </html>
+

@@ -128,3 +128,39 @@ const day = hour * 24
 // Set date input min. with Todays date
 const today = new Date().toISOString().split('T')[0]
 dateEl.setAttribute('min',today)
+
+//populate countdown and complete UI
+function updateDom(){
+  countdownActive = setInterval(()=>{
+    const now = new Date().getTime()
+  const distance = countdownValue - now
+  console.log('distance', distance)
+  
+  const days = Math.floor(distance / day)
+  const hours = Math.floor((distance % day) / hour)
+  const minutes = Math.floor((distance % hour) / minute)
+  const seconds = Math.floor((distance % minute) / second)
+  console.log(days,hours,minutes,seconds)
+  
+  //Hide input
+  inputContainer.hidden= true
+    
+  //if the countdown has ended, in this case show complete
+    if(distance <0){
+      countdownEl.hidden = true
+      clearInterval(countdownActive)
+      completeElInfo.textContent = `*${countdownTitle}/ FINISHED on  ${countdownDate}`
+      completeEl.hidden=false
+    }else{
+      //show the countdown in progress
+      countdownElTitle.textContent = `${countdownTitle}`   
+  timeElements[0].textContent = `${days} `   
+  timeElements[1].textContent = `${hours} `
+  timeElements[2].textContent = `${minutes} `
+  timeElements[3].textContent = `${seconds} `
+  completeEl.hidden=true
+  countdownEl.hidden=false
+    }
+    
+  }, second)
+}
