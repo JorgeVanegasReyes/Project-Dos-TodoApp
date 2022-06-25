@@ -188,3 +188,16 @@ function updateCountdown(e){
   updateDom()
   }
 }
+
+//Reset Values
+function reset(){
+  //hide countdown and show inputs
+  countdownEl.hidden= true
+  completeEl.hidden=true
+  inputContainer.hidden=false
+  //stop the countdown
+  clearInterval(countdownActive)
+  //Reset Values
+  countdownTitle=''
+  countdownDate= ''
+}
