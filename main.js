@@ -65,6 +65,11 @@ let createTasks = () => {
   resetForm();
 };
 
+let checkTask = (e) => {
+  e.parentElement.parentElement.style.cssText = "text-decoration:line-through; background:rgba(243, 46, 46, 0.3);";
+  localStorage.setItem("data", JSON.stringify(data));  
+}
+
 let deleteTask = (e) => {
   e.parentElement.parentElement.remove();
   data.splice(e.parentElement.parentElement.id, 1);
