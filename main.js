@@ -201,3 +201,21 @@ function reset(){
   countdownTitle=''
   countdownDate= ''
 }
+function restorePreviousCountdown(){
+  if(localStorage.getItem('countdown')){
+    inputContainer.hidden=true
+    savedCountdown=JSON.parse(localStorage.getItem('countdown'))
+    countdownTitle=savedCountdown.title
+    countdownDate=savedCountdown.date
+    countdownValue = new Date (countdownDate).getTime()
+    updateDom()
+  }
+}
+
+//Event Listeners
+countdownForm.addEventListener('submit', updateCountdown)
+countdownBtn.addEventListener('click', reset)
+completeBtn.addEventListener('click', reset)
+
+//on Load, check localStorage, llamamos la funcion para que la informacion no se pierda cuando se recarga la pagina
+restorePreviousCountdown()
